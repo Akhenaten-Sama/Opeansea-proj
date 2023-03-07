@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(217, 54%, 11%);
+}
+
+
+@media (min-width:768px) { 
+ 
+   .item-col-3 { width: 23% }
+}
+
+/* Mobiles */
+@media (max-width:767px) {  }
+ 
+.container-flexbox {
+   height: 100vh;
+  margin-top: 50px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: space-around; 
+   flex-wrap: wrap;
+}
