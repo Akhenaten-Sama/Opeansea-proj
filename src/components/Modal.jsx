@@ -35,7 +35,7 @@ console.log(card)
   return (
     <Rodal
       customStyle={{ overflow: "scroll" }}
-      width={600}
+      width={500}
       height={600}
       animation="zoom"
       visible={visible}
@@ -47,7 +47,7 @@ console.log(card)
         <div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <img
-              style={{ height: "400px", width: "550px", borderRadius: "8px" }}
+              style={{ height: "400px", width: "450px", borderRadius: "8px" }}
               src={card?.image_url}
             />
             <div
@@ -96,6 +96,7 @@ console.log(card)
                 ></i>
               }
               href={card?.permalink}
+              target="_blank"
             >
               <span className="card__info-box-left">
                 <span> {"Purchase"}</span> <EthereumIcom />
