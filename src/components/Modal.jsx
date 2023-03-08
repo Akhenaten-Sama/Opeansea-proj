@@ -58,7 +58,6 @@ console.log(card)
               }}
             >
               {card?.name}{" "}
-             
             </div>
             <div
               style={{
@@ -101,6 +100,14 @@ console.log(card)
               <span className="card__info-box-left">
                 <span> {"Purchase"}</span> <EthereumIcom />
               </span>
+            </Button>
+
+            <Button
+            onClick={onClose}
+              style={{ marginLeft:"50px",marginTop: "20px", background: "#011f3c" }}
+              type="primary"
+            >
+              Close Modal
             </Button>
           </div>
         </div>
