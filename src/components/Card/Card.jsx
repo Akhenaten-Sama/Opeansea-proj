@@ -3,16 +3,18 @@ import { EthereumIcom, ClockIcon, ViewIcon } from "../../assets/svg";
 import { BoxShadow, Card as StyledCard } from "./StyledCard";
 import image from "../../assets/img/image-avatar.png";
 import { Flex } from "../../assets/style/variables";
-const truncate = (words) => {
-  return `${words.slice(0, 30)} …`;
-};
+import {truncate} from "../../util/helpers"
 
+//card is memoized before export
 function Card({ details }) {
   return (
     <BoxShadow size="20px" color="#0c182a">
       <BoxShadow color="#0C1729">
         <StyledCard>
-          <div className="card__img">
+          <div
+            style={{ backgroundImage: `url(${details?.image_url})` }}
+            className="card__img"
+          >
             <div className="card__visible">
               <div className="card__visible-icon">
                 <ViewIcon />
@@ -23,27 +25,25 @@ function Card({ details }) {
             <h3>{details.name}</h3>
             <p style={{ textOverflow: "ellipsis" }}>
               {" "}
-              {details.description? truncate(details?.description):""}
+              {details.description ? truncate(details?.description) : ""}
             </p>
           </div>
           <Flex className="card__info-row">
             <Flex>
-              <EthereumIcom />
-              <span className="card__info-box-left">0.041 eth</span>
+              <span className="card__info-box-left">
+                Token Id {details?.token_id}
+              </span>
             </Flex>
             <Flex>
-              <ClockIcon />
-              <span className="card__info-box-right">3 days left</span>
+              <span className="card__info-box-right">
+                {details?.num_sales} sold
+              </span>
             </Flex>
           </Flex>
           <div className="card__footer">
             <Flex gap="15px" justify="flex-start">
-              <div className="avatar">
-                <img src={image} alt="avatar" />
-              </div>
-              <p>
-                Creating of <span>Jules Wyvern</span>
-              </p>
+              <div className="avatar"></div>
+              <span style={{ color: "white" }}>Olalekan </span>
             </Flex>
           </div>
         </StyledCard>

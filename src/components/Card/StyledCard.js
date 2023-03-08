@@ -19,7 +19,6 @@ export const Card = styled.section`
   .card__img {
     height: 53%;
     width: 100%;
-    background-image: url(${img});
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

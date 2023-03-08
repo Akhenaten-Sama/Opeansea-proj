@@ -4,11 +4,14 @@ import "rodal/lib/rodal.css";
 import { fetchCard } from "../util/api";
 import Spinner from "./Spinner";
 import { Button, message } from "antd";
+import { EthereumIcom } from "../assets/svg";
 
 const Modal = ({ visible, onClose, id, address }) => {
   const [loading, setLoading] = useState(false);
   const [card, setCard] = useState({});
-
+console.log(card)
+  const price = Object.keys(card).length>0?Object.values(card?.collection?.fees?.seller_fees)[0]:0
+  console.log(price)
   const getCard = async () => {
     setLoading(true);
     await fetchCard(address, id)
@@ -54,7 +57,8 @@ const Modal = ({ visible, onClose, id, address }) => {
                 margin: "10px 0 0px",
               }}
             >
-              {card?.name}
+              {card?.name}{" "}
+             
             </div>
             <div
               style={{
@@ -94,7 +98,9 @@ const Modal = ({ visible, onClose, id, address }) => {
               }
               href={card?.permalink}
             >
-              Purchase
+              <span className="card__info-box-left">
+                <span> {"Purchase"}</span> <EthereumIcom />
+              </span>
             </Button>
           </div>
         </div>
