@@ -1,5 +1,7 @@
 import axios from "axios"
 
+
+//used a Free rapidapi key, so I did't border to hide it..
 export const fetchCards = async (address) =>
   axios.get(`https://opensea-data-query.p.rapidapi.com/api/v1/assets`, {
     params: { owner: address, order_direction: "desc", limit: "20" },
