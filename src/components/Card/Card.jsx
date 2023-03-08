@@ -4,7 +4,7 @@ import { BoxShadow, Card as StyledCard } from "./StyledCard";
 import image from "../../assets/img/image-avatar.png";
 import { Flex } from "../../assets/style/variables";
 const truncate = (words) => {
-  return `${words.slice(0, 80)} …`;
+  return `${words.slice(0, 30)} …`;
 };
 
 function Card({ details }) {
